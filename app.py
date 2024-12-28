@@ -62,7 +62,15 @@ class ResetPasswordForm(FlaskForm):
 EMAIL_SENDER = os.getenv("EMAIL_SENDER")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 EMAIL_SERVER = os.getenv("EMAIL_SERVER", "smtp.gmail.com")  # Default to gmail
-EMAIL_PORT = int(os.getenv("EMAIL_PORT", 587))  # Default to gmail port
+# new code for EMAIL_PORT starts here
+try:
+    EMAIL_PORT = int(os.getenv("EMAIL_PORT", "587").split("#")[0].strip())
+except ValueError:
+    raise ValueError("Invalid EMAIL_PORT value. Please provide a valid integer.")
+
+#new code for EMAIL_PORT ends here
+
+# EMAIL_PORT = int(os.getenv("EMAIL_PORT", 587))  # Default to gmail port
 
 def send_reset_email(email, token):
     reset_link = url_for('reset_password', token=token, _external=True)
