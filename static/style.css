@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: none; /* Remove default border */
+}
+
+.card-title {
+    font-weight: 600; /* Slightly bolder title */
+}
+
+.form-label {
+    font-weight: 500;
+}
+.btn-block{
+    margin-top: 10px;
+}
+
+.btn-primary, .btn-success, .btn-warning {
+    border: none; /* Remove button borders */
+    transition: transform 0.2s; /* Add transition for hover effect */
+}
+
+.btn-primary:hover, .btn-success:hover, .btn-warning:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Add a bit more shadow on hover */
+}
+.bg-light{
+    background-color: #f8f9fa !important;
+}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome, {{ email }}!</h1>
+    <p class="lead">You are now logged in.</p>
+    <hr class="my-4">
+    <p>This is your dashboard. You can add more content here.</p>
+    <a class="btn btn-danger btn-lg" href="{{ url_for('logout') }}" role="button">Logout</a>
+</div>
+{% endblock %}
